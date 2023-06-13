@@ -19,6 +19,6 @@ export class WelcomePageComponent implements OnInit {
     this.router.navigate(['/auth/register'])
   }
   learnMore(){
-    // this.router.navigate(['/tour/about'])
+    this.router.navigate(['/tour/tourPage'])
   }
 }

@@ -9,6 +9,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { AuthRoutingModule } from './auth/auth-routing/auth-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     AuthRoutingModule,
     RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

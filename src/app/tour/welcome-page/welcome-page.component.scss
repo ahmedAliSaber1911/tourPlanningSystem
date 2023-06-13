@@ -21,11 +21,12 @@ main{
     background-color: orangered;
     color: white;
     font-size: 16px;
+    &:hover{
+      background-color: white;
+      color: orangered;
+    }
   }
-  .login:hover{
-    background-color: white;
-    color: orangered;
-  }
+
   .content{
     height: 80%;
     row-gap: 20px;
@@ -49,17 +50,18 @@ main{
     .learn{
       background-color: orangered;
       color: white;
+      &:hover{
+        background-color: white;
+        color: orangered;
+      }
     }
-    .learn:hover{
-      background-color: white;
-      color: orangered;
-    }
+
     .signUp{
       color: orangered;
-    }
-    .signUp:hover{
-      background-color: orangered;
-      color: white;
+      &:hover{
+        background-color: orangered;
+        color: white;
+      }
     }
   }
 }

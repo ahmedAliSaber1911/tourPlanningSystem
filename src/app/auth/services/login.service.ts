@@ -8,9 +8,9 @@ import { login } from '../interfaces/interfaces';
 export class LoginService {
 
   constructor(private http:HttpClient) { }
-  // i wait for modal as parameter of type login (interface)  to the login method
-  // login(modal:login){
+   // i wait for modal as parameter of type login (interface)  to the login method
+  login(modal:login){
 
-  //   // return this.http
-  // }
+  return this.http.post('https://tourproject.onrender.com/api/v1/users/login' , modal)
+  }
 }

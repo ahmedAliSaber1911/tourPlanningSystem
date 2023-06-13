@@ -1,3 +1,4 @@
+import { login } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
@@ -9,11 +10,19 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginPageComponent implements OnInit {
   constructor(
+    //The FormBuilder provides syntactic sugar that shortens creating instances of a FormControl, FormGroup, or FormArray.
+    //It reduces the amount of boilerplate needed to build complex forms.
     private fb: FormBuilder,
-
+    private service : LoginService
 
     ) {}
   // to save the data on
+  user =[
+    {
+      userName: 'ahmedalisaber965@gmail.com',
+      password:'12341234'
+    }
+  ]
   loginForm!: FormGroup;
   ngOnInit(): void {
     this.createForm();
@@ -33,5 +42,11 @@ export class LoginPageComponent implements OnInit {
     });
   }
   login() {
+    // i pass the modal contain data i will check
+    this.service.login(this.loginForm.value).subscribe(res=>{
+
+    } , error =>{
+
+    })
   }
 }
