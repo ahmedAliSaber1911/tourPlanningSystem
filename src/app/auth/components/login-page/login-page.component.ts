@@ -1,8 +1,10 @@
+import { Router } from '@angular/router';
 import { login } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
-
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -13,8 +15,10 @@ export class LoginPageComponent implements OnInit {
     //The FormBuilder provides syntactic sugar that shortens creating instances of a FormControl, FormGroup, or FormArray.
     //It reduces the amount of boilerplate needed to build complex forms.
     private fb: FormBuilder,
-    private service : LoginService
-
+    private service : LoginService,
+    private toastr: ToastrService,
+    private router: Router,
+    private spinner: NgxSpinnerService,
     ) {}
   // to save the data on
   user =[
@@ -42,11 +46,16 @@ export class LoginPageComponent implements OnInit {
     });
   }
   login() {
+    this.spinner.show();
     // i pass the modal contain data i will check
     this.service.login(this.loginForm.value).subscribe(res=>{
-
+      // toastr is a ngx component used for show popup message whether in success or in error
+      this.toastr.success("success" , 'Login Successfully');
+      this.spinner.hide();
     } , error =>{
-
+      this.toastr.error(error);
+      this.spinner.hide();
+      this.router.navigate(["/tour/tourPage"])
     })
   }
 }
