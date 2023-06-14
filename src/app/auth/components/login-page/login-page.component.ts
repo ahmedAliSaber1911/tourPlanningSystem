@@ -1,5 +1,5 @@
+import { environment } from './../../../../environments/environment';
 import { Router } from '@angular/router';
-import { login } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
@@ -19,14 +19,11 @@ export class LoginPageComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private spinner: NgxSpinnerService,
-    ) {}
-  // to save the data on
-  user =[
-    {
-      userName: 'ahmedalisaber965@gmail.com',
-      password:'12341234'
+    ) {
+      // this for showing the login buttom and hide logout or verse
+      environment.entered = true
     }
-  ]
+
   loginForm!: FormGroup;
   ngOnInit(): void {
     this.createForm();
@@ -34,9 +31,9 @@ export class LoginPageComponent implements OnInit {
   createForm() {
     this.loginForm = this.fb.group({
       //[the initial value , array of validators ]
-      email: ['', [Validators.required, Validators.email]],
+      email: ['zamalekawy63@gmail.com', [Validators.required, Validators.email]],
       password: [
-        '',
+        '236673236673',
         [
           Validators.required,
           Validators.minLength(8),
@@ -51,11 +48,15 @@ export class LoginPageComponent implements OnInit {
     this.service.login(this.loginForm.value).subscribe(res=>{
       // toastr is a ngx component used for show popup message whether in success or in error
       this.toastr.success("success" , 'Login Successfully');
+      this.router.navigate(["/tour/tourPage"]);
       this.spinner.hide();
+      environment.entered = false
     } , error =>{
-      this.toastr.error(error);
+      console.log(error)
+      this.toastr.error(error.error);
       this.spinner.hide();
-      this.router.navigate(["/tour/tourPage"])
+
     })
   }
+
 }

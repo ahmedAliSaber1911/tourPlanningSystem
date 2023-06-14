@@ -11,6 +11,6 @@ export class LoginService {
    // i wait for modal as parameter of type login (interface)  to the login method
   login(modal:login){
 
-  return this.http.post('https://tourproject.onrender.com/api/v1/users/login' , modal)
+  return this.http.post('http://localhost:3001/api/v1/users/login' , modal)
   }
 }
