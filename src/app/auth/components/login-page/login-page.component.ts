@@ -43,6 +43,7 @@ export class LoginPageComponent implements OnInit {
     });
   }
   login() {
+    if(this.loginForm.valid){
     this.spinner.show();
     // i pass the modal contain data i will check
     this.service.login(this.loginForm.value).subscribe(res=>{
@@ -57,6 +58,6 @@ export class LoginPageComponent implements OnInit {
       this.spinner.hide();
 
     })
-  }
+  }}
 
 }

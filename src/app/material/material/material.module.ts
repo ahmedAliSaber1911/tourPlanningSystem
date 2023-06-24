@@ -35,6 +35,7 @@ import {MatNativeDateModule, MatRippleModule, MAT_DATE_LOCALE} from '@angular/ma
     MatDatepickerModule,
     MatSortModule,
     MatTableModule,
+
   ],
 })
 export class MaterialModule {

@@ -1,0 +1,25 @@
+<h1>Contact Us</h1>
+<div class="container">
+  <div class="contact">
+    <div class="left">
+      <h2>Fill the form. <br> It's easy.</h2>
+      <p class="sent" *ngIf="enable">Your message was sent, thank you!</p>
+      <form  [formGroup]="form">
+        <div class="name">
+          <input required  type="text" class="form-control" formControlName="firstName" placeholder="First Name" >
+          <input  type="text" formControlName="lastName" placeholder="Last Name">
+        </div>
+        <input  type="email" placeholder="Email" formControlName="Email">
+        <textarea name="Message" formControlName="message"  rows="8" cols="30" placeholder="Write your message"></textarea>
+        <button class="submit" (click)="submit()">Submit</button>
+      </form>
+    </div>
+    <div class="right">
+      <h3>Let's talk about everything</h3>
+      <p>
+        We are here to help and answer any question you might have. We look forward to hearing from you.
+      </p>
+    </div>
+  </div>
+</div>
+
