@@ -31,9 +31,9 @@ export class LoginPageComponent implements OnInit {
   createForm() {
     this.loginForm = this.fb.group({
       //[the initial value , array of validators ]
-      email: ['zamalekawy63@gmail.com', [Validators.required, Validators.email]],
+      email: ['ahmed@gmail.com', [Validators.required, Validators.email]],
       password: [
-        '236673236673',
+        '12341234',
         [
           Validators.required,
           Validators.minLength(8),
@@ -54,7 +54,7 @@ export class LoginPageComponent implements OnInit {
       environment.entered = false
     } , error =>{
       console.log(error)
-      this.toastr.error(error.error);
+      this.toastr.error('incorrect password');
       this.spinner.hide();
 
     })

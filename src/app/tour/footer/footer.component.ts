@@ -22,12 +22,16 @@ export class FooterComponent implements OnInit {
   }
 
   submit(){
-    if(this.form.valid){
-      this.enable = true
-      setTimeout(() => {
-        this.enable =false
-      }, 4000);
-    }
+    setTimeout(()=>{
+      if(this.form.valid){
+        this.enable = true
+        setTimeout(() => {
+          this.enable =false
+        }, 4000);
+        this.form.reset()
+      }
+    },2000)
+
   }
 
 }

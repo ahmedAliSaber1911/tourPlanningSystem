@@ -1,14 +1,14 @@
-<main class="container d-flex justify-content-between mb-5" >
-  <div class="logo"><img src="../../../assets/images/pngegg.png" alt=""> Egypt</div>
+<main class="container  mb-5" >
+  <div class="logo"><img src="../../../assets/images/LOGO.jpg" alt=""> </div>
   <ul>
-    <li><a >Where To Go</a></li>
-    <li><a>What To Do</a></li>
-    <li><a>Contact</a></li>
+    <li><a routerLink="/tourPage">Home</a></li>
+    <li><a routerLink="/whereToGo">Destinations</a></li>
+    <li><a routerLink="/whatToDo">Travel Packets</a></li>
+    <li><a href="contact">Contact</a></li>
   </ul>
   <div class="auth">
     <button  (click)="login()" *ngIf="entered">Login</button>
     <button routerLink="register" *ngIf="entered" (click)="signUp()">SignUp</button>
     <button (click)="logout()" *ngIf="!entered">Logout</button>
-
   </div>
 </main>

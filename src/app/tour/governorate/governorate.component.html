@@ -1,0 +1,16 @@
+<app-navbar class="nav"></app-navbar>
+<div class="container" *ngIf="tour">
+<div class="imageContainer" >
+  <img src="{{tour.imageUrl}}" alt="">
+
+</div>
+<div class="information">
+  <h1>{{tour.governor}}</h1>
+  <p>{{tour.description}}</p>
+  <p>Rating:  <span>{{tour.ratings}}</span></p>
+</div>
+
+</div>
+<div class="governorTours">
+  <h1>{{tour.governor}}'s tours</h1>
+  </div>

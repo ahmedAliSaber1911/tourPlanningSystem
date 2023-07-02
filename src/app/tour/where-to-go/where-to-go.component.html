@@ -1,0 +1,16 @@
+<app-navbar class="nav"></app-navbar>
+<div class="container" >
+  <div class="title">
+    <h1>Egypt's Governorates</h1>
+  </div>
+  <div class="governorates" >
+    <div class="governorate"*ngFor="let tour of tourData">
+      <img src={{tour.imageUrl}}>
+      <div class="information">
+      <h3>{{tour.governor}}</h3>
+      <p>Cairo is the capital of Egypt and the largest city in Afirca, with a name that means "the victorious city."</p>
+      <button [routerLink]="'/governator/' + tour.id">Read More</button>
+    </div>
+      </div>
+  </div>
+</div>

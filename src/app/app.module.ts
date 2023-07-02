@@ -13,12 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TourModule } from './tour/tour.module';
+import { WhatToDoComponent } from './tour/what-to-do/what-to-do.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    RegisterComponent
-  ],
+    RegisterComponent,
+    WhatToDoComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

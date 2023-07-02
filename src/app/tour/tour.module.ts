@@ -6,6 +6,10 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WhereToGoComponent } from './where-to-go/where-to-go.component';
+import { WhatToDoComponent } from './what-to-do/what-to-do.component';
+import { TourPackagesComponent } from './tour-packages/tour-packages.component';
+import { GovernorateComponent } from './governorate/governorate.component';
 
 
 const routes: Routes = [
@@ -16,7 +20,20 @@ const routes: Routes = [
   {
     path:'tourPage',
     component:TourComponent
-  }
+  },
+  {
+    path:'whereToGo',
+    component:WhereToGoComponent
+  },
+  {
+    path:'whatToDo',
+    component:WhatToDoComponent
+  },
+  {
+    path:'governator/:id',
+    component:GovernorateComponent
+  },
+
 ];
 @NgModule({
   declarations: [
@@ -24,6 +41,9 @@ const routes: Routes = [
     WelcomePageComponent,
     NavbarComponent,
     FooterComponent,
+    WhereToGoComponent,
+    TourPackagesComponent,
+    GovernorateComponent,
 
   ],
   imports: [
