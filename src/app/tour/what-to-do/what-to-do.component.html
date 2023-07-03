@@ -1,1 +1,17 @@
-<p>what-to-do works!</p>
+<app-navbar class="nav"></app-navbar>
+
+<div class="container">
+  <title>
+    What To Do IN Egypt
+  </title>
+  <div class="governorates">
+    <div class="governorate" *ngFor="let thing of thingsToDo">
+      <img src={{thing.imageUrl}}>
+      <div class="information">
+        <h3>{{thing.governor}}</h3>
+        <p>{{thing.description}}</p>
+      </div>
+      <button [routerLink]="'/thingToDo/' + thing.id">Read More</button>
+    </div>
+  </div>
+</div>

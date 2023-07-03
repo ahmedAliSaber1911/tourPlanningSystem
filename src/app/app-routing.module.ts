@@ -1,7 +1,6 @@
 import { LoginPageComponent } from './auth/components/login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomePageComponent } from './tour/welcome-page/welcome-page.component';
 import { TourComponent } from './tour/tour/tour.component';
 
 const routes: Routes = [

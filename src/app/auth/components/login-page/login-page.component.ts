@@ -54,7 +54,7 @@ export class LoginPageComponent implements OnInit {
       environment.entered = false
     } , error =>{
       console.log(error)
-      this.toastr.error('incorrect password');
+      this.toastr.error('incorrect password or email');
       this.spinner.hide();
 
     })

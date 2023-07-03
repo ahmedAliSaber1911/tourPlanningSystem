@@ -40,11 +40,11 @@
                     <mat-error>required</mat-error>
                 </mat-form-field>
               </form>
-              <div class="d-flex justify-content-center">
-                  <button mat-raised-button color="warn" [disabled]="registerForm.invalid" (click)="signUp()">Create Account</button>
+              <div class="d-flex justify-content-center mb-3">
+                  <button mat-raised-button class="registerButton " [disabled]="registerForm.invalid" (click)="signUp()">Create Account</button>
               </div>
               <div class="d-flex justify-content-center">
-                  <a routerLink="/auth/login">Sign In?</a>
+                  <a routerLink="/auth/login" class="signIn">Sign In?</a>
               </div>
           </div>
        </div>
