@@ -10,6 +10,7 @@ import { WhatToDoComponent } from './what-to-do/what-to-do.component';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 import { GovernorateComponent } from './governorate/governorate.component';
 import { ThingToDoComponent } from './thing-to-do/thing-to-do.component';
+import { PackagePageComponent } from './tour-packages/package-page/package-page.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
     path:'packages',
     component:TourPackagesComponent
   },
+  {
+    path:'packagePage',
+    component:PackagePageComponent
+  },
 ];
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ const routes: Routes = [
     GovernorateComponent,
     WhatToDoComponent,
     ThingToDoComponent,
+    PackagePageComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
