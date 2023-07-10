@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FooterComponent implements OnInit {
   form!:FormGroup;
   enable:boolean = false;
-  constructor(private fb:FormBuilder) {
+
+  constructor(private fb:FormBuilder ) {
     this.form = this.fb.group({
       'firstName' : ['',Validators.required],
       'lastName':['',Validators.required],
@@ -18,7 +19,8 @@ export class FooterComponent implements OnInit {
     })
 
    }
-  ngOnInit(): void {
+   ngOnInit(): void {
+
   }
 
   submit(){
@@ -31,7 +33,6 @@ export class FooterComponent implements OnInit {
         this.form.reset()
       }
     },2000)
-
   }
 
 }
