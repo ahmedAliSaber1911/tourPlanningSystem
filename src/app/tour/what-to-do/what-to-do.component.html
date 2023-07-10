@@ -4,14 +4,73 @@
   <title>
     What To Do IN Egypt
   </title>
-  <div class="governorates">
-    <div class="governorate" *ngFor="let thing of thingsToDo">
-      <img src={{thing.imageUrl}}>
+  <div class="things">
+    <div class="thing">
+      <img src="../../../assets/images/seaandsun.jpg">
       <div class="information">
-        <h3>{{thing.governor}}</h3>
-        <p>{{thing.description}}</p>
+        <h3>SUN&SEA</h3>
+        <p>Egypt’s weather guarantees sun year-round, making it the go-to destination for vacationers any time of the year Fun-filled afternoons by the Red Sea have a lot to offer, from basking in the sun, swimming, and snorkeling, to diving among some of the world’s most productive and diverse coral reefs.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
       </div>
-      <button [routerLink]="'/thingToDo/' + thing.id">Read More</button>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/nature.jpg">
+      <div class="information">
+        <h3>NATURE</h3>
+        <p>Egypt has a very good climate with the majority of the landscape being dominated by large deserts to the east and west of the Nile River with vegetation occurring only in the Nile Valley, the Nile Delta and pockets of desert Oases. Egypt's most important geographical feature is the Nile River. </p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/museum.jpg">
+      <div class="information">
+        <h3>MUSEUMS</h3>
+        <p>History is synonymous with grandeur in Egypt, and its museums will transport you back in time, where you will take in awe-inspiring history and remarkable collections of antiquities and artistic gems.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+
+    <div class="thing">
+      <img src="../../../assets/images/spiritual.jpg">
+      <div class="information">
+        <h3>SPIRITUAL</h3>
+        <p>Retreat from the daily demands of everyday living; take a spiritual retreat to receive spiritual renewal. The stillness of ancient places of worship .</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/spa.jpg">
+      <div class="information">
+        <h3>SPA</h3>
+        <p>Body treatments may include sauna, whirlpool, jet bath, steam room, massage, mud bath, salt scrub, seaweed body wraps, clay or herbal body masks, reflexology and waxing. Day spas also usually offer nail services, such as manicures, pedicures and paraffin treatments.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/nilecruise.jpg">
+      <div class="information">
+        <h3>NILE CRUISE</h3>
+        <p>History is synonymous with grandeur in Egypt, and its museums will transport you back in time, where you will take in awe-inspiring history and remarkable collections of antiquities and artistic gems.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/adventure.jpg">
+      <div class="information">
+        <h3>Adventure</h3>
+        <p>Adventure deep into the desert; safaris to Western Desert oases, the stunning Great Sand Sea desert and the Sinai desert are engrossing adventures. Rev your engine; quad biking in the Eastern Desert is a rush. Hiking the mountains of Sinai is a gripping experience.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
+    </div>
+    <div class="thing">
+      <img src="../../../assets/images/culture.jpg">
+      <div class="information">
+        <h3>Culture and Historical Sites</h3>
+        <p>Egypt offers you a rich cultural experience that spans thousands of years of history and the continuous practice of age old traditions. Walk into the vestibules of the ancients; explore Ancient Egyptian temples, tombs and other monuments.</p>
+      <button [routerLink]="'/thingToDo'">Explore</button>
+      </div>
     </div>
   </div>
+
 </div>
+

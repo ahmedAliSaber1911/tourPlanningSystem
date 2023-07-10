@@ -4,13 +4,13 @@
     <h1>Egypt's Governorates</h1>
   </div>
   <div class="governorates">
-    <div class="governorate" *ngFor="let tour of tourData">
-      <img src={{tour.imageUrl}}>
+    <div class="governorate" *ngFor="let governator of goverantors">
+      <img src={{governator.imageUrl}}>
       <div class="information">
-        <h3>{{tour.governor}}</h3>
-        <p>{{tour.description}}</p>
+        <h3>{{governator.name}}</h3>
+        <p>{{governator.description}}</p>
       </div>
-      <button [routerLink]="'/governator/' + tour.id">Read More</button>
+      <button [routerLink]="'/governator/' + governator._id" [queryParams]="{'tour': governator.name}">Read More</button>
     </div>
   </div>
 </div>

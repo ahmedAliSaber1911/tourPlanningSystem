@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterService } from './../../services/register.service';
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private registerService: RegisterService,
     private toastr: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private router: Router
   ) {}
   registerForm!: FormGroup;
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class RegisterComponent implements OnInit {
       res=> {
         this.spinner.hide();
         this.toastr.success('success', 'User Created Successfully.');
+        this.router.navigateByUrl("/login")
       },
       error=> {
         this.spinner.hide();

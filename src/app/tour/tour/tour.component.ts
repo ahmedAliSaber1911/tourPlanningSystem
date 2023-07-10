@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TourServiceService } from '../tour-service.service';
-import { tourInterface } from 'src/app/auth/interfaces/tour';
+import { governator } from 'src/app/auth/interfaces/governators';
 
 @Component({
   selector: 'app-tour',
@@ -8,7 +8,7 @@ import { tourInterface } from 'src/app/auth/interfaces/tour';
   styleUrls: ['./tour.component.scss']
 })
 export class TourComponent implements OnInit {
-  governators:tourInterface[] = [];
+  governators:governator[] = [];
   constructor(
     private service: TourServiceService
   ) { }
@@ -17,7 +17,7 @@ export class TourComponent implements OnInit {
     this.getAllGovernators()
   }
   getAllGovernators(){
-    this.service.getAllTours().subscribe((res:any)=>{
+    this.service.getAllgovernators().subscribe((res:any)=>{
       this.governators = res.data.doc;
       console.log(this.governators)
     },error=>{

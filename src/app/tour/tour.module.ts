@@ -11,6 +11,7 @@ import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 import { GovernorateComponent } from './governorate/governorate.component';
 import { ThingToDoComponent } from './thing-to-do/thing-to-do.component';
 import { PackagePageComponent } from './tour-packages/package-page/package-page.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,7 @@ const routes: Routes = [
     component:GovernorateComponent
   },
   {
-    path:'thingToDo/:id',
+    path:'thingToDo',
     component:ThingToDoComponent
   },
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path:'packagePage',
     component:PackagePageComponent
+  },
+  {
+    path:'payment',
+    component:PaymentComponent
   },
 ];
 @NgModule({
@@ -55,6 +60,7 @@ const routes: Routes = [
     WhatToDoComponent,
     ThingToDoComponent,
     PackagePageComponent,
+    PaymentComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

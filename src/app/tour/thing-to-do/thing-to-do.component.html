@@ -1,14 +1,32 @@
 <app-navbar class="nav"></app-navbar>
-<div class="container" *ngIf="tour">
+<header class="container">
   <div class="imageContainer">
-    <img src="{{tour.imageUrl}}" alt="">
+    <img src="../../../assets/images/seaandsun.jpg" alt="">
   </div>
   <div class="information">
-    <h1>{{tour.governor}}</h1>
-    <p>{{tour.description}}</p>
-    <p>Rating: <span>{{tour.ratings}}</span></p>
+    <h1>Sun && Sea Tours</h1>
+    <p>Egypt’s weather guarantees sun year-round, making it the go-to destination for vacationers any time of the year.
+      Fun-filled afternoons by the Red Sea have a lot to offer, from basking in the sun, swimming, and snorkeling, to
+      diving among some of the world’s most productive and diverse coral reefs. Extreme sports lovers will have a field
+      day riding the invigorating winds while windsurfing or kitesurfing in the Red Sea’s pristine waters. Unwinding by
+      the Red Sea also includes some laid-back activities, such as Bedouin dining, with delicious slow-cooked food,
+      campfires, and music. For a relaxing wellness experience, you can indulge in a wide range of spa treatments and
+      services found in most five-star and international hotels. Popular among locals in the summer, Egypt’s North Coast
+      provides a unique beach experience that is perfectly complemented by great dining options and a vibrant nightlife.
+      Strolls along white sandy shores and dips in the turquoise waters of the Mediterranean are sure to captivate the
+      sea-lover in you.</p>
   </div>
-</div>
-<div class="governorTours">
-  <h1>{{tour.governor}}'s tours</h1>
+</header>
+
+<div class="tours" >
+  <div class="tour" *ngFor="let tour of tours">
+    <img src={{tour.imageUrl}}>
+    <div class="information">
+      <h3>{{tour.governor}}</h3>
+      <p>{{tour.description}}</p>
+
+    </div>
+
+  </div>
+
 </div>

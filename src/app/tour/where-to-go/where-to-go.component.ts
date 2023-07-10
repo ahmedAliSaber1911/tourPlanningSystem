@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TourServiceService } from '../tour-service.service';
 import { ToastrService } from 'ngx-toastr';
-import { tourInterface } from 'src/app/auth/interfaces/tour';
+import { governator } from 'src/app/auth/interfaces/governators';
 @Component({
   selector: 'app-where-to-go',
   templateUrl: './where-to-go.component.html',
@@ -10,7 +10,7 @@ import { tourInterface } from 'src/app/auth/interfaces/tour';
 })
 export class WhereToGoComponent implements OnInit {
 
-  tourData:tourInterface[] =[];
+  goverantors:governator[] =[];
   constructor(
     private service: TourServiceService,
     private toastr: ToastrService,
@@ -18,15 +18,18 @@ export class WhereToGoComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getAllTours()
+    this.getAllGoverantors();
   }
   // i subscribe because the return is observable
-  getAllTours(){
-    this.service.getAllTours().subscribe((res:any)=>{
-      this.tourData = res.data.doc
+  getAllGoverantors(){
+    this.service.getAllgovernators().subscribe((res:any)=>{
+      this.goverantors = res.data.doc;
     }, error =>{
       this.toastr.error("Failed to get the data.");
+      console.log(error)
     });
   }
+
+
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TourServiceService } from '../tour-service.service';
 import { ToastrService } from 'ngx-toastr';
-import {  tourInterface } from 'src/app/auth/interfaces/tour';
+import {  TourInterface } from 'src/app/auth/interfaces/tour';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-thing-to-do',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ThingToDoComponent implements OnInit {
   governorateId =this.route.snapshot.paramMap.get('id');
-  tour:tourInterface;
+  tours:TourInterface[];
   constructor(
     private service: TourServiceService,
     private toastr:ToastrService,
@@ -18,14 +18,15 @@ export class ThingToDoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getTour()
+    this.getTours()
   }
-  getTour(){
-    this.service.getTourById(this.governorateId).subscribe((res:any)=>{
-      this.tour = res;
-      console.log(this.tour)
+  getTours(){
+    this.service.getAllTours().subscribe((res:TourInterface[])=>{
+      this.tours = res.filter(tour=>tour.title?.includes("the sun and sea"));
+      console.log(this.tours)
     },error =>{
       this.toastr.error("Fail to get the data.")
     });
   }
+
 }

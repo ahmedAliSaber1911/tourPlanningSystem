@@ -1,14 +1,31 @@
 <app-navbar class="nav"></app-navbar>
-<div class="container" *ngIf="tour">
-  <div class="imageContainer">
-    <img src="{{tour.imageUrl}}" alt="">
+
+<ng-container *ngIf="governator">
+  <div class="container">
+    <div class="imageContainer">
+      <img src="{{governator.imageUrl}}" alt="">
+    </div>
+    <div class="information">
+      <h1>{{governator.name}}</h1>
+      <p>{{governator.description}}</p>
+      <p>Rating: <span>5</span></p>
+    </div>
   </div>
-  <div class="information">
-    <h1>{{tour.governor}}</h1>
-    <p>{{tour.description}}</p>
-    <p>Rating: <span>{{tour.ratings}}</span></p>
+
+  <div class="governorTours">
+    <h1>{{governator.name}}'s tours</h1>
   </div>
-</div>
-<div class="governorTours">
-  <h1>{{tour.governor}}'s tours</h1>
-</div>
+  <div class="tours">
+    <div class="tour" *ngFor="let tour of tours">
+      <img src={{tour.imageUrl}}>
+      <div class="information">
+        <h3>{{tour.name}}</h3>
+        <p>{{tour.description}}</p>
+        <button [routerLink]="'/governator/' + governator._id" [queryParams]="{'tour': governator.name}">Read
+          More</button>
+      </div>
+
+    </div>
+
+  </div>
+</ng-container>

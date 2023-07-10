@@ -12,7 +12,7 @@
     <p>Everyday is a journey and your journey starts here.</p>
   </div>
   <div class="places" >
-    <div class="city" *ngFor="let governator of governators | slice:7:11" style="background-image: url({{governator.imageUrl}});">
+    <div class="city" *ngFor="let governator of governators | slice:0:4" style="background-image: url({{governator.imageUrl}});">
       <div class="title">
         <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass"
             viewBox="0 0 16 16">
@@ -21,7 +21,7 @@
             <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
           </svg> Where To Go</p>
         <div class="line"></div>
-        <h1>{{governator.governor}} </h1>
+        <h1 [routerLink]="'/governator/' + governator._id" [queryParams]="{'tour': governator.name}">{{governator.name}} </h1>
       </div>
     </div>
   </div>
@@ -89,5 +89,10 @@
 <div class="readyToTravel">
   <h1>Ready To Travel With Us On Your Next Trip?</h1>
   <button class="explore" routerLink="/packages">See Tour Packages</button>
+</div>
+<div class="recommond">
+  <h1>Tell us what the governator you want to explore ?</h1>
+  <input  type="text" placeholder="Cairo">
+  <button>see alll recommendations</button>
 </div>
 <app-footer></app-footer>

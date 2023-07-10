@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TourServiceService } from '../tour-service.service';
-import { tourInterface } from 'src/app/auth/interfaces/tour';
+import { TourInterface } from 'src/app/auth/interfaces/tour';
 
 @Component({
   selector: 'app-what-to-do',
@@ -8,7 +8,7 @@ import { tourInterface } from 'src/app/auth/interfaces/tour';
   styleUrls: ['./what-to-do.component.scss']
 })
 export class WhatToDoComponent implements OnInit {
-  thingsToDo:tourInterface[] = [];
+  thingsToDo:TourInterface[] = [];
   constructor(
     private service: TourServiceService
   ) { }
